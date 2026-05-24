@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: ecole_rdc_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ecole
+      POSTGRES_PASSWORD: ecole_password
+      POSTGRES_DB: ecole_rdc
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ecole -d ecole_rdc"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

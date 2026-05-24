@@ -1,0 +1,3 @@
+Place ici la photo réelle de l’école avec le nom exact : 1.jpg
+Chemin attendu par l’interface : frontend/public/1.jpg
+Si le fichier est absent, l’application garde un fond sombre professionnel, mais la photo ne s’affiche pas.
